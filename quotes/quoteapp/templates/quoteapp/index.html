@@ -1,0 +1,57 @@
+{% extends "quoteapp/base.html" %}
+
+{% block content %}
+
+<div class="row header-box mb-3 mt-3">
+    <div class="col-md-8">
+        <h1>
+            <a href="/" style="text-decoration: none">Quotes</a>
+        </h1>
+    </div>
+</div>
+
+
+<div class="row">
+    {% for quote in quotes %}
+    <div class="card mb-3" style="width: 60rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{ quote.author.fullname }}
+            <a href="/author/{{ quote.author.fullname }}">(about)</a>
+            </h6>
+            <p class="card-text">{{ quote.quote }}</p>
+            <div class="tags">
+                Tags:
+                {% for tag in quote.tags.all %}
+                <a class="tag" href="#">{{tag.name}} | </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="col-md-8">
+        <nav>
+            <ul class="pager">
+
+                <li class="previous">
+                    <a class="{% if not quotes.has_previous %} disabled {% endif %}"
+                       href="{% if quotes.has_previous %} {% url 'quoteapp:main_paginate' quotes.previous_page_number %} {% else %} # {% endif %}">
+                        <span aria-hidden="true">←</span> Previous
+                    </a>
+                </li>
+
+
+                <li class="next">
+                    <a class="{% if not quotes.has_next %} disabled {% endif %}"
+                       href="{% if quotes.has_next %} {% url 'quoteapp:main_paginate' quotes.next_page_number %} {% else %} # {% endif %}">
+                        Next <span aria-hidden="true">→</span></a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+{% endblock %}
