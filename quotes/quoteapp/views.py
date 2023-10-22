@@ -4,6 +4,8 @@ from django.core.paginator import Paginator
 
 from .forms import AuthorForm, QuoteForm
 from .models import Authors, Tag, Quotes
+
+
 # Create your views here.
 def main(request, page=1):
     quotes = Quotes.objects.all()
@@ -11,6 +13,7 @@ def main(request, page=1):
     paginator = Paginator(list(quotes), per_page)
     quotes_on_page = paginator.page(page)
     return render(request, 'quoteapp/index.html', {"quotes": quotes_on_page})
+
 
 @login_required
 def add_author(request):
@@ -24,6 +27,7 @@ def add_author(request):
 
     return render(request, 'quoteapp/add_author.html', {'form': AuthorForm()})
     # return render(request, 'quoteapp/add_author.html')
+
 
 @login_required
 def add_quote(request):
@@ -47,6 +51,7 @@ def add_quote(request):
             return render(request, 'quoteapp/add_quote.html', {"tags": tags, "authors": authors, "form": form})
 
     return render(request, 'quoteapp/add_quote.html', {"tags": tags, "authors": authors, "form": QuoteForm()})
+
 
 def author_info(request, author_name):
     author = Authors.objects.get(fullname=author_name)
