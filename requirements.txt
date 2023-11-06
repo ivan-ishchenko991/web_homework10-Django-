@@ -1,5 +1,6 @@
-django
-psycopg2
-pymongo
-django-environ
-pillow
+django = "^4.2.5"
+psycopg2 = "^2.9.7"
+pymongo = "^4.5.0"
+django-environ = "^0.11.2"
+pillow = "^10.1.0"
+gunicorn = "^21.2.0"
