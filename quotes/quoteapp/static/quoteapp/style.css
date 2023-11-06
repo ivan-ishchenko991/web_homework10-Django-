@@ -1,90 +1,68 @@
-/* Загальні стилі */
+/* style.css */
+/* Стилі для загального вигляду */
 body {
     font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+
+/* Стилі для заголовку */
+.header {
     background-color: #f0f0f0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Стилі для логотипу */
+svg {
+    fill: #007bff;
+    margin-right: 10px;
 }
 
-/* Стилі для верхнього меню */
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-.nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.nav a {
+/* Стилі для меню навігації */
+.nav-link {
+    color: #007bff;
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    margin-right: 10px;
 }
 
 /* Стилі для форми пошуку */
 .form-control {
     width: 200px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-right: 10px;
 }
 
-/* Стилі для користувача */
-.dropdown {
-    position: relative;
+/* Стилі для аватара користувача у випадаючому списку */
+.dropdown-toggle {
+    padding: 0;
 }
 
-.dropdown .rounded-circle {
-    border: 1px solid #fff;
+/* Стилі для фото користувача */
+.rounded-circle {
+    border: 1px solid #007bff;
 }
 
+/* Стилі для випадаючого списку користувача */
 .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #666;
-    border-radius: 5px;
-    padding: 0.5rem;
+    min-width: 100px;
+    text-align: right;
 }
 
+/* Стилі для пунктів випадаючого списку */
 .dropdown-item {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 0.25rem 1.5rem;
+    color: #007bff;
 }
 
-/* Медіа-запит для адаптивного дизайну */
-@media (max-width: 768px) {
-    .nav {
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .nav li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .form-control {
-        width: 100%;
-    }
+/* Стилі для роздільника випадаючого списку */
+.dropdown-divider {
+    margin: 0;
 }
----------------------------------------------------
+
+/*----------------------------------------------------------------------------------------------*/
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 .flex-wrap {
     flex-wrap: wrap!important;
@@ -121,14 +99,14 @@ body {
     float: right;
 }
 
-.pager li>a, .pager li>span {
+/*.pager li>a, .pager li>span {
     display: inline-block;
     padding: 5px 14px;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 15px;
 }
-
+*/
 .disabled {
     color: #333333;
 }
